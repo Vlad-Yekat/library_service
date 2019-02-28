@@ -1,0 +1,41 @@
+variables:
+  MYSQL_DATABASE: library_db
+  MYSQL_ROOT_PASSWORD: 12345
+  IMAGE: library-service
+  TEST_IMAGE: library-service-test
+
+stages:
+  - build
+  - test
+  - push
+
+build:
+  stage: build
+  script:
+    - docker build -t $IMAGE:$CI_COMMIT_REF_SLUG-tests .
+    - docker push $IMAGE:$CI_COMMIT_REF_SLUG-tests
+    - echo Building!
+
+test:
+  stage: test
+  image: $IMAGE:$CI_COMMIT_REF_SLUG-tests
+
+  services:
+  - name: percona
+    alias: mysql
+  script:
+    - ls
+    - cat db/database.sql | mysql -h mysql -u root -p$MYSQL_ROOT_PASSWORD library_db
+    - python3 manage.py migrate
+    - python3 manage.py test tests/*_tests
+    - py.test --cov=answer
+  coverage: '/\s\d{2,3}%$/'
+
+push:
+  stage: push
+  script:
+    - docker pull $IMAGE:$CI_COMMIT_REF_SLUG-tests
+    - docker tag $IMAGE:$CI_COMMIT_REF_SLUG-tests $IMAGE:latest
+    - docker push $IMAGE:latest
+  only:
+    - production

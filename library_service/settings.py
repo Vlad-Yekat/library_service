@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "main_room.apps.MainRoomConfig",
+    "rest_framework",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,9 +76,13 @@ WSGI_APPLICATION = 'library_service.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "library_db",
+        "USER": "root",
+        "PASSWORD": "12345",
+        "HOST": "127.0.0.1",  # Or an IP Address that your DB is hosted on
+        "PORT": "3305",
     }
 }
 

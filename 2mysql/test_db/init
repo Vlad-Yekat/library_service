@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mysql -u root -puda6j2aZItsyrw3G8hPRcc2vuWmCYL < database.sql

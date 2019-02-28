@@ -1,0 +1,25 @@
+{
+  "title": "add_book",
+  "type": "object",
+  "properties": {
+    "writer_id": {
+      "description": "id of the writer",
+      "type": "string"
+    },
+    "title": {
+      "description": "title of the book",
+      "type": "string"
+    },
+    "state": {
+      "description": "state of the book",
+      "type": "string"
+    },
+    "date_published": {
+      "description": "birth date",
+      "type": "date"
+    }
+  },
+  "required": ["writer_id", "title", "state", "date_published"],
+  "additionalProperties": false
+}
+

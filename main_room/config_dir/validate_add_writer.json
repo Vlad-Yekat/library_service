@@ -1,0 +1,25 @@
+{
+  "title": "add_writer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "name of the writer",
+      "type": "string"
+    },
+    "surname": {
+      "description": "surname of writer",
+      "type": "string"
+    },
+    "city": {
+      "description": "city of living",
+      "type": "string"
+    },
+    "birth_date": {
+      "description": "birth date",
+      "type": "date"
+    }
+  },
+  "required": ["name", "surname", "city", "birth_date"],
+  "additionalProperties": false
+}
+
