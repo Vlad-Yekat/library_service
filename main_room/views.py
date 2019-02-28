@@ -1,8 +1,8 @@
 """ модуль представления для джанги """
+from http import HTTPStatus
 import json
 import copy
 from django.http import JsonResponse
-from http import HTTPStatus
 from django.views.decorators.csrf import csrf_exempt
 from jsonschema.exceptions import ValidationError
 from . import json_converter

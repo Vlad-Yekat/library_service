@@ -1,15 +1,15 @@
 """ модуль сериализации """
-from rest_framework import serializers
 import datetime
+from rest_framework import serializers
 from .errors import JsonErr
 from .constants import get_state_by_name
 
 
 def birth_date_validator(birth_date):
     """ валидация  даты рождения"""
-    d = datetime.datetime.now()
-    if birth_date > d:
-        raise serializers.ValidationError(JsonErr.INVALID_REQUEST["data"])
+    current_year = datetime.datetime.now().year
+    if birth_date.year > current_year:
+        raise serializers.ValidationError("Invalid year of birth_dae")
     else:
         return birth_date
 

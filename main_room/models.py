@@ -111,7 +111,7 @@ class Books(models.Model):
         self.date_published = date_published
         self.title = title
         self.barcode = bin(self.id)
-        self.status = get_state_by_name(state)
+        self.state = get_state_by_name(state)
         self.save()
         return {"result": self.id}
 
@@ -120,12 +120,11 @@ class Books(models.Model):
         data = {"state": state}
         result_serializer = BookSerializerEdit(data=data)
         if result_serializer.is_valid():
-            self.status = get_state_by_name(state)
+            self.state = get_state_by_name(state)
             self.save()
 
     def mark_deleted(self):
         """ так как мы не удаляем а только списываем"""
-        status_num = get_state_by_name("CANCELLED")
-        self.status = status_num
+        self.state = get_state_by_name("CANCELLED")
         self.save()
 
