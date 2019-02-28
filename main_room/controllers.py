@@ -1,13 +1,26 @@
 """
 В данном модуле контроллеры
 """
-
+import os
+import requests
 from django.db.models import ProtectedError
+from django.db.models import Q
 from rest_framework.exceptions import ValidationError
 from .models import Writer
 from .models import Books
 from .errors import JsonErr, return_invalid_request
 from . import json_converter
+
+OTHER_LIB_URL = (
+    os.getenv("MOSCOW_LIBRARY_HOST", "http://localhost")
+    + ":"
+    + os.getenv("MOSCOW_LIBRARY_PORT", "8080")
+)
+
+
+def get_response(params):
+    """ вынесем отдельно запрос на микросервис сторонне библиотеки"""
+    return requests.post(OTHER_LIB_URL, json=params).json()
 
 
 def validate(function):
@@ -73,12 +86,39 @@ def edit_writer(params):
         return {"error": JsonErr.DATA_NOT_FOUND_WRITER}
 
     writer_record.edit_writer(
-        name=params["name"],
-        surname=params["surname"],
         city=params["city"],
-        birth_date=params["birth_date"],
     )
     return writer_id
+
+
+@validate
+def search_writer(params):
+    """
+    :param:
+    {
+     "jsonrpc": "2.0",
+     "method": "search_writer",
+     "params": {
+               },
+     "id": 3
+    }
+    :return:
+    {"jsonrpc": "2.0", "result": 1, "id": 3}
+    """
+    other_lib_params = {"method": "search_writer_moscow", "params": params}
+    other_lib_jsonrpc = json_converter.prepare_for_jsonrpc(other_lib_params, 1)
+    response_other_lib = get_response(other_lib_jsonrpc)
+    if "result" in response_other_lib:
+        pass
+
+    try:
+        writer_record = Writer.objects.get(Q(name__exact=params["name"]),
+                                           Q(surname__exact=params["surname"]),
+                                           Q(birth_date__exact=params["birth_date"]))
+    except Writer.DoesNotExist:
+        return {"error": JsonErr.DATA_NOT_FOUND_WRITER}
+
+    return writer_record.id
 
 
 @validate

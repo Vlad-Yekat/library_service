@@ -2,24 +2,16 @@
   "title": "edit_writer",
   "type": "object",
   "properties": {
-    "name": {
-      "description": "name of the writer",
-      "type": "string"
-    },
-    "surname": {
-      "description": "surname of writer",
+    "writer_id": {
+      "description": "id of the writer",
       "type": "string"
     },
     "city": {
       "description": "city of living",
       "type": "string"
-    },
-    "birth_date": {
-      "description": "birth date",
-      "type": "date"
     }
   },
-  "required": ["name", "surname", "city", "birth_date"],
+  "required": ["writer_id", "city"],
   "additionalProperties": false
 }
 

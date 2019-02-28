@@ -2,20 +2,12 @@
   "title": "del_writer",
   "type": "object",
   "properties": {
-    "name": {
-      "description": "name of the writer",
+    "writer_id": {
+      "description": "id of the writer",
       "type": "string"
-    },
-    "surname": {
-      "description": "surname of writer",
-      "type": "string"
-    },
-    "birth_date": {
-      "description": "birth date",
-      "type": "date"
     }
   },
-  "required": ["name", "surname", "birth_date"],
+  "required": ["writer_id"],
   "additionalProperties": false
 }
 
