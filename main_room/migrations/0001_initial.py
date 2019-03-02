@@ -9,34 +9,46 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Books',
+            name="Books",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('date_published', models.DateField()),
-                ('title', models.CharField(max_length=245)),
-                ('last_updated', models.DateTimeField(auto_now=True)),
-                ('state', models.IntegerField(choices=[(0, 'DRAFT'), (1, 'PUBLISHED'), (2, 'DENIED'), (3, 'CANCELLED')], null=True)),
-                ('barcode', main_room.models.Binary365Field(unique=True)),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("date_published", models.DateField()),
+                ("title", models.CharField(max_length=245)),
+                ("last_updated", models.DateTimeField(auto_now=True)),
+                (
+                    "state",
+                    models.IntegerField(
+                        choices=[
+                            (0, "DRAFT"),
+                            (1, "PUBLISHED"),
+                            (2, "DENIED"),
+                            (3, "CANCELLED"),
+                        ],
+                        null=True,
+                    ),
+                ),
+                ("barcode", main_room.models.Binary365Field(unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Writer',
+            name="Writer",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=100)),
-                ('surname', models.CharField(max_length=100)),
-                ('city', models.CharField(max_length=45)),
-                ('birth_date', models.DateField()),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("name", models.CharField(max_length=100)),
+                ("surname", models.CharField(max_length=100)),
+                ("city", models.CharField(max_length=45)),
+                ("birth_date", models.DateField()),
             ],
         ),
         migrations.AddField(
-            model_name='books',
-            name='writer',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='main_room.Writer'),
+            model_name="books",
+            name="writer",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT, to="main_room.Writer"
+            ),
         ),
     ]

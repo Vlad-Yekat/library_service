@@ -69,4 +69,3 @@ class TestSearchWriter(TestCase):
         self.assertEqual(response_answer, response_answer_search)
         self.assertLessEqual(count_before, count_after)
         self.assertEqual(response.status_code, HTTPStatus.OK)
-

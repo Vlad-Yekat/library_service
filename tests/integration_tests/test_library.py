@@ -191,10 +191,7 @@ class TestEditWriterIntegrityError(TestCase):
         response_answer = response_json["result"]
         test_edit_writer = {
             "method": "edit_writer",
-            "params": {
-                "writer_id": response_answer,
-                "n1m": 123,
-            },
+            "params": {"writer_id": response_answer, "n1m": 123},
             "jsonrpc": "2.0",
             "id": 123,
         }

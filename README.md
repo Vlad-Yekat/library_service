@@ -38,4 +38,4 @@ with JSON RPC 2.0
   добавляет книгу
   итд
   
-
+см. примеры в examples/examples_json.py

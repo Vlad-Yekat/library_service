@@ -45,7 +45,6 @@ class FixtureDict:
         "birth_date": "23/01/1977",
     }
 
-
     param_add_writer_without_city = {
         "name": "James",
         "surname": "Bond",
@@ -57,7 +56,6 @@ class FixtureDict:
         "surname": "Bond",
         "city": "London",
     }
-
 
     param_add_writer_error_name = copy.copy(param_add_writer)
     param_add_writer_error_name["name"] = 123

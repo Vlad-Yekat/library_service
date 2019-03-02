@@ -20,10 +20,10 @@ class JsonErr:
     DATA_NOT_FOUND = -32602
     PROTECTED_ERROR = -32655
 
-    INVALID_REQUEST_STATUS_PARAM = {
+    INVALID_REQUEST_STATE_PARAM = {
         "code": INVALID_REQUEST,
         "message": "Invalid Request",
-        "data": "Non valid 'status' param",
+        "data": "Non valid 'state' param",
     }
 
     INVALID_REQUEST_OTHER_PARAM = {

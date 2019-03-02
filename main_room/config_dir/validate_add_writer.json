@@ -16,7 +16,7 @@
     },
     "birth_date": {
       "description": "birth date",
-      "type": "date"
+      "type": "string"
     }
   },
   "required": ["name", "surname", "city", "birth_date"],

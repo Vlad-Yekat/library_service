@@ -47,7 +47,7 @@ class BookSerializerAdd(serializers.Serializer):
 
     date_published = serializers.DateField(validators=[birth_date_validator])
     title = serializers.CharField(max_length=255)
-    status = serializers.CharField(max_length=255, validators=[state_validator])
+    state = serializers.CharField(max_length=255, validators=[state_validator])
 
 
 class BookSerializerEdit(serializers.Serializer):

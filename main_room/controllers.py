@@ -85,9 +85,7 @@ def edit_writer(params):
     except Writer.DoesNotExist:
         return {"error": JsonErr.DATA_NOT_FOUND_WRITER}
 
-    writer_record.edit_writer(
-        city=params["city"],
-    )
+    writer_record.edit_writer(city=params["city"])
     return writer_id
 
 
@@ -112,9 +110,11 @@ def search_writer(params):
         pass
 
     try:
-        writer_record = Writer.objects.get(Q(name__exact=params["name"]),
-                                           Q(surname__exact=params["surname"]),
-                                           Q(birth_date__exact=params["birth_date"]))
+        writer_record = Writer.objects.get(
+            Q(name__exact=params["name"]),
+            Q(surname__exact=params["surname"]),
+            Q(birth_date__exact=params["birth_date"]),
+        )
     except Writer.DoesNotExist:
         return {"error": JsonErr.DATA_NOT_FOUND_WRITER}
 

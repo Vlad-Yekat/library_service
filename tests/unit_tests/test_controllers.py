@@ -177,10 +177,7 @@ class TestAddBook(TestCase):
         answer = add_writer(param)
         result_writer = answer
 
-        param = {
-            "writer_id": result_writer,
-            "title": "Capital",
-        }
+        param = {"writer_id": result_writer, "title": "Capital"}
         answer = add_book(param)
 
         self.assertEqual(answer[:4], "Capi")
@@ -200,9 +197,7 @@ class TestAddBookError(TestCase):
 
     def test_id_error(self):
         """неправильный параметр writ_id"""
-        param = {
-            "wrt_id": "1111",
-        }
+        param = {"wrt_id": "1111"}
         search_string = "wrt_id"
         with self.assertRaises(ValidationError) as error:
             add_book(param)

@@ -15,8 +15,8 @@
       "type": "string"
     },
     "date_published": {
-      "description": "birth date",
-      "type": "date"
+      "description": "published date",
+      "type": "string"
     }
   },
   "required": ["writer_id", "title", "state", "date_published"],
