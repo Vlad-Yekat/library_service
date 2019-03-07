@@ -1,6 +1,6 @@
 """ В этом модуле примеры внешних запросов """
 import requests
-
+import json
 
 def main():
     """ можно запускать из IDE или клонсоли"""
@@ -20,7 +20,7 @@ def main():
     }
 
     response = requests.post(url_library_service, json=test_add_writer).json()
-    print("->", test_add_writer)
+    print("->", json.dumps(test_add_writer, indent=4, sort_keys=False))
     print("<-", response)
 
     assert response["jsonrpc"]
@@ -40,7 +40,7 @@ def main():
     }
 
     response = requests.post(url_library_service, json=test_add_book).json()
-    print("->", test_add_book)
+    print("->", json.dumps(test_add_book, indent=4, sort_keys=False))
     print("<-", response)
 
     assert response["jsonrpc"]

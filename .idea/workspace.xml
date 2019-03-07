@@ -3,26 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ae94cf7-31c5-4a3f-a844-f09f41957b7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_service/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_service/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_service/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_service/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_service/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_service/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/config_dir/validate_add_book.json" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/config_dir/validate_add_book.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/config_dir/validate_add_writer.json" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/config_dir/validate_add_writer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/config_dir/validate_search_writer.json" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/config_dir/validate_search_writer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/controllers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_room/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_room/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration_tests/test_library.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration_tests/test_library.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration_tests/test_out_library.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration_tests/test_out_library.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit_tests/test_controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit_tests/test_controllers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit_tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit_tests/test_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example_json.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_room/controllers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2355">
+            <state relative-caret-position="2400">
               <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
               <folding>
                 <element signature="e#36#45#0" expanded="true" />
@@ -44,19 +25,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/example_json.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+            <state relative-caret-position="479">
+              <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
+              <folding>
+                <element signature="e#47#62#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/unit_tests/test_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
+            <state relative-caret-position="381">
               <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
               <folding>
                 <element signature="e#26#35#0" expanded="true" />
@@ -68,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_room/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="780">
               <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
               <folding>
                 <element signature="e#40#67#0" expanded="true" />
@@ -80,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_room/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="660">
               <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
                 <element signature="e#28#43#0" expanded="true" />
@@ -101,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_room/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="130" column="63" lean-forward="true" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
+            <state relative-caret-position="1890">
+              <caret line="130" column="63" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
               <folding>
                 <element signature="e#32#60#0" expanded="true" />
               </folding>
@@ -115,7 +99,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="510">
-                <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+                <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -199,8 +183,8 @@
         <option value="$PROJECT_DIR$/main_room/errors.py" />
         <option value="$PROJECT_DIR$/main_room/serializers.py" />
         <option value="$PROJECT_DIR$/main_room/models.py" />
-        <option value="$PROJECT_DIR$/examples/example_json.py" />
         <option value="$PROJECT_DIR$/tests/unit_tests/test_models.py" />
+        <option value="$PROJECT_DIR$/examples/example_json.py" />
       </list>
     </option>
   </component>
@@ -215,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -275,7 +260,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,14 +328,14 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25245902" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25245902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Project Explorer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Job Explorer" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -551,12 +535,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2mysql/test_db/database.sql">
+      <provider editor-type-id="OdpsQlGraph" />
       <provider selected="true" editor-type-id="OdpsQlEditor">
         <state relative-caret-position="60">
           <caret line="4" column="54" selection-start-line="4" selection-end-line="4" selection-end-column="54" />
         </state>
       </provider>
-      <provider editor-type-id="OdpsQlGraph" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pytest.ini">
       <provider selected="true" editor-type-id="text-editor">
@@ -586,11 +570,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main_room/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+          <folding>
+            <element signature="e#36#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_room/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+          <folding>
+            <element signature="e#40#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_room/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="e#28#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_room/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_room/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="130" column="63" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
+          <folding>
+            <element signature="e#32#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="510">
-            <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+            <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>
@@ -610,66 +641,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_room/constants.py">
+    <entry file="file://$PROJECT_DIR$/tests/unit_tests/test_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="43" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_room/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+        <state relative-caret-position="381">
+          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
           <folding>
-            <element signature="e#40#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_room/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
-          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
-          <folding>
-            <element signature="e#36#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_room/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-          <folding>
-            <element signature="e#28#43#0" expanded="true" />
+            <element signature="e#26#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/example_json.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_room/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="130" column="63" lean-forward="true" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
+        <state relative-caret-position="479">
+          <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
           <folding>
-            <element signature="e#32#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit_tests/test_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
-          <folding>
-            <element signature="e#26#35#0" expanded="true" />
+            <element signature="e#47#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
