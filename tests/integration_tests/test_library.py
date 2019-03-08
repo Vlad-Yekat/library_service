@@ -136,8 +136,7 @@ class TestEditWriterIntegrity(TestCase):
         response_json = response.json()
         response_answer = response_json["result"]
 
-        edit_param = FixtureDict.param_add_writer
-        edit_param["city"] = "Osaka"
+        edit_param = {"writer_id": response_answer, "city": "Osaka"}
         test_edit_writer = {
             "method": "edit_writer",
             "params": edit_param,
@@ -152,13 +151,14 @@ class TestEditWriterIntegrity(TestCase):
             content_type="application/json",
         )
 
-        new_writer = Writer.objects.get(pk=1)
+        print("response", response.json())
+        edit_writer = Writer.objects.get(pk=response_answer)
 
-        response_answer = response.json()["result"]
+        response_answer_edit = response.json()["result"]
 
-        self.assertEqual(new_writer.city, "Osaka")
+        self.assertEqual(edit_writer.city, "Osaka")
         self.assertEqual(response.status_code, HTTPStatus.OK)
-        self.assertEqual(response_answer, "Adam")
+        self.assertEqual(response_answer, response_answer_edit)
 
 
 @pytest.mark.django_db

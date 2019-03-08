@@ -26,7 +26,7 @@ class TestAddWriter(TestCase):
         param = FixtureDict.param_add_writer
         answer = add_writer(param)
 
-        self.assertEqual(answer, param["name"])
+        self.assertIsInstance(answer, int)
 
 
 @pytest.mark.django_db
@@ -44,30 +44,34 @@ class TestAddWriterError(TestCase):
     def test_name(self):
         param = FixtureDict.param_add_writer_error_name
         search_string = "name"
-        result = add_writer(param)
+        with self.assertRaises(ValidationError) as error:
+            add_writer(param)
 
-        self.assertRegex(str(result), "[^a-z]" + search_string + "[^a-z]")
+        self.assertRegex(str(error.exception), "[^a-z]" + search_string + "[^a-z]")
 
     def test_birth_date(self):
         param = FixtureDict.param_add_writer_error_birth_date
         search_string = "birth_date"
-        result = add_writer(param)
+        with self.assertRaises(ValidationError) as error:
+            add_writer(param)
 
-        self.assertRegex(str(result), "[^a-z]" + search_string + "[^a-z]")
+        self.assertRegex(str(error.exception), "[^a-z]" + search_string + "[^a-z]")
 
     def test_city(self):
         param = FixtureDict.param_add_writer_without_city
         search_string = "city"
-        result = add_writer(param)
+        with self.assertRaises(ValidationError) as error:
+            add_writer(param)
 
-        self.assertRegex(str(result), "[^a-z]" + search_string + "[^a-z]")
+        self.assertRegex(str(error.exception), "[^a-z]" + search_string + "[^a-z]")
 
     def test_surname(self):
         param = FixtureDict.param_add_writer_without_surname
         search_string = "surname"
-        result = add_writer(param)
+        with self.assertRaises(ValidationError) as error:
+            add_writer(param)
 
-        self.assertRegex(str(result), "[^a-z]" + search_string + "[^a-z]")
+        self.assertRegex(str(error.exception), "[^a-z]" + search_string + "[^a-z]")
 
 
 @pytest.mark.django_db
@@ -85,11 +89,10 @@ class TestEditWriter(TestCase):
         param = FixtureDict.param_add_writer
         answer = add_writer(param)
 
-        param = FixtureDict.param_add_writer
-        param["name"] = answer
+        param = {"writer_id": answer, "city": "Osaka"}
         answer = edit_writer(param)
 
-        self.assertEqual(answer, "Adam")
+        self.assertIsInstance(answer, int)
 
 
 @pytest.mark.django_db
@@ -135,8 +138,7 @@ class TestDelWriter(TestCase):
         param = {"writer_id": result}
         answer = del_writer(param)
 
-        self.assertIsInstance(answer, str)
-        self.assertEqual(answer[:4], "Adam")
+        self.assertIsInstance(answer, int)
 
 
 @pytest.mark.django_db
@@ -177,10 +179,15 @@ class TestAddBook(TestCase):
         answer = add_writer(param)
         result_writer = answer
 
-        param = {"writer_id": result_writer, "title": "Capital"}
+        param = {
+            "writer_id": result_writer,
+            "title": "Capital",
+            "state": "DRAFT",
+            "date_published": "2019-01-01",
+        }
         answer = add_book(param)
 
-        self.assertEqual(answer[:4], "Capi")
+        self.assertIsInstance(answer, int)
 
 
 @pytest.mark.django_db

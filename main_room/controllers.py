@@ -11,6 +11,9 @@ from .models import Books
 from .errors import JsonErr, return_invalid_request
 from . import json_converter
 
+# from django.db import connections
+
+
 OTHER_LIB_URL = (
     os.getenv("MOSCOW_LIBRARY_HOST", "http://localhost")
     + ":"
@@ -58,6 +61,7 @@ def add_writer(params):
             city=params["city"],
             birth_date=params["birth_date"],
         )
+        # print(connections['default'].queries)
     except ValidationError as error:
         return return_invalid_request(error)
 

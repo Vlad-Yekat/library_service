@@ -2,6 +2,7 @@
 import requests
 import json
 
+
 def main():
     """ можно запускать из IDE или клонсоли"""
     url_library_service = "http://localhost:8000"

@@ -27,10 +27,10 @@ def pytest_configure():
 
 class FixtureDict:
     param_add_writer = {
-        "name": "James",
-        "surname": "Bond",
-        "city": "London",
-        "birth_date": "23/01/1977",
+        "name": "Adam",
+        "surname": "Smith",
+        "city": "Kirkcaldy",
+        "birth_date": "1723-06-17",
     }
 
     param_add_writer_without_name = {

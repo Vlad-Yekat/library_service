@@ -75,15 +75,10 @@ class Writer(models.Model):
             self.birth_date = birth_date
             self.save()
 
-    def edit_writer(self, name, surname, city, birth_date):
+    def edit_writer(self, city):
         """ функция редактирования только города
         """
-        data = {
-            "name": name,
-            "surname": surname,
-            "city": city,
-            "birth_date": birth_date,
-        }
+        data = {"city": city}
         result_serializer = WriterSerializerEdit(data=data)
         if result_serializer.is_valid():
             self.city = city

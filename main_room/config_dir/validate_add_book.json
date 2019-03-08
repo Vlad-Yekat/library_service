@@ -4,7 +4,7 @@
   "properties": {
     "writer_id": {
       "description": "id of the writer",
-      "type": "string"
+      "type": "number"
     },
     "title": {
       "description": "title of the book",

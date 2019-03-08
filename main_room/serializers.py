@@ -36,10 +36,7 @@ class WriterSerializerAdd(serializers.Serializer):
 class WriterSerializerEdit(serializers.Serializer):
     """ валидатор функции редактирования писателя"""
 
-    name = serializers.CharField(max_length=100)
-    surname = serializers.CharField(max_length=100)
     city = serializers.CharField(max_length=255)
-    birth_date = serializers.DateField(validators=[birth_date_validator])
 
 
 class BookSerializerAdd(serializers.Serializer):
