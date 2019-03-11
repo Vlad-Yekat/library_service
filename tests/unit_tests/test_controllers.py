@@ -14,7 +14,7 @@ mark = pytest.mark.django_db
 class TestAddWriter(TestCase):
     """
     SUCCESS TEST(UNIT)
-    Проверяем функцию добавления сети """
+    Проверяем функцию добавления автора """
 
     @classmethod
     def setUpClass(cls):
@@ -77,7 +77,7 @@ class TestAddWriterError(TestCase):
 @pytest.mark.django_db
 class TestEditWriter(TestCase):
     """ SUCCESS TEST(UNIT)
-    Проверяем функцию изменения параметров сети """
+    Проверяем функцию изменения параметров автора """
 
     @classmethod
     def setUpClass(cls):
@@ -144,7 +144,7 @@ class TestDelWriter(TestCase):
 @pytest.mark.django_db
 class TestDelWriterError(TestCase):
     """ EXCEPTION TEST(UNIT)
-    Проверяем функцию удаления сети с ошибочным параметром
+    Проверяем функцию удаления автора с ошибочным параметром
     """
 
     @classmethod

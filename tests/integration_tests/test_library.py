@@ -17,7 +17,7 @@ mark = pytest.mark.django_db
 
 class TestAddWriterIntegrity(TestCase):
     """
-    SUCCESS TEST(INTEGRATION) - Проверяем функцию добавления сети
+    SUCCESS TEST(INTEGRATION) - Проверяем функцию добавления автора
     """
 
     @classmethod
