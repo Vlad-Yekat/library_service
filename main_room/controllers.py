@@ -19,26 +19,26 @@ OTHER_LIB_URL = (
 )
 
 
-def get_response(**kwargs):
+def get_response(args):
     """ вынесем отдельно запрос на микросервис сторонне библиотеки"""
-    return requests.post(OTHER_LIB_URL, json=kwargs).json()
+    return requests.post(OTHER_LIB_URL, json=args).json()
 
 
 def validate(function):
     """ процедура валидации входных параметров """
 
-    def wrapped(**kwargs):
+    def wrapped(args):
         """ проверяем json схему """
-        validate_json_error = json_converter.validate_json(kwargs, function.__name__)
+        validate_json_error = json_converter.validate_json(args, function.__name__)
         if validate_json_error:
             return return_invalid_request(validate_json_error)
-        return function(kwargs)
+        return function(args)
 
     return wrapped
 
 
 @validate
-def add_writer(**kwargs):
+def add_writer(args):
     """
     :param:
     {
@@ -54,10 +54,10 @@ def add_writer(**kwargs):
     new_writer = Writer()
     try:
         new_writer.add_writer(
-            name=kwargs["name"],
-            surname=kwargs["surname"],
-            city=kwargs["city"],
-            birth_date=kwargs["birth_date"],
+            name=args["name"],
+            surname=args["surname"],
+            city=args["city"],
+            birth_date=args["birth_date"],
         )
         # print(connections['default'].queries)
     except ValidationError as error:
@@ -67,7 +67,7 @@ def add_writer(**kwargs):
 
 
 @validate
-def edit_writer(**kwargs):
+def edit_writer(args):
     """
     :param:
     {
@@ -80,19 +80,19 @@ def edit_writer(**kwargs):
     :return:
     {"jsonrpc": "2.0", "result": 1, "id": 3}
     """
-    writer_id = kwargs["writer_id"]
+    writer_id = args["writer_id"]
 
     try:
         writer_record = Writer.objects.get(pk=writer_id)
     except Writer.DoesNotExist:
         return {"error": JsonErr.DATA_NOT_FOUND_WRITER}
 
-    writer_record.edit_writer(city=kwargs["city"])
+    writer_record.edit_writer(city=args["city"])
     return writer_id
 
 
 @validate
-def search_writer(**kwargs):
+def search_writer(args):
     """
     :param:
     {
@@ -105,7 +105,7 @@ def search_writer(**kwargs):
     :return:
     {"jsonrpc": "2.0", "result": 1, "id": 3}
     """
-    other_lib_params = {"method": "search_writer_moscow", "params": kwargs}
+    other_lib_params = {"method": "search_writer_moscow", "params": args}
     other_lib_jsonrpc = json_converter.prepare_for_jsonrpc(other_lib_params, 1)
     response_other_lib = get_response(other_lib_jsonrpc)
     if "result" in response_other_lib:
@@ -113,9 +113,9 @@ def search_writer(**kwargs):
 
     try:
         writer_record = Writer.objects.get(
-            Q(name__exact=kwargs["name"]),
-            Q(surname__exact=kwargs["surname"]),
-            Q(birth_date__exact=kwargs["birth_date"]),
+            Q(name__exact=args["name"]),
+            Q(surname__exact=args["surname"]),
+            Q(birth_date__exact=args["birth_date"]),
         )
     except Writer.DoesNotExist:
         return {"error": JsonErr.DATA_NOT_FOUND_WRITER}
@@ -124,7 +124,7 @@ def search_writer(**kwargs):
 
 
 @validate
-def del_writer(**kwargs):
+def del_writer(args):
     """
     :param:
     {
@@ -137,7 +137,7 @@ def del_writer(**kwargs):
     :return:
     {"jsonrpc": "2.0", "result": 1, "id": 3}
     """
-    writer_id = kwargs["writer_id"]
+    writer_id = args["writer_id"]
 
     try:
         deleted_writer = Writer.objects.get(pk=writer_id)
@@ -153,7 +153,7 @@ def del_writer(**kwargs):
 
 
 @validate
-def add_book(**kwargs):
+def add_book(args):
     """
     :param:
     {
@@ -169,16 +169,16 @@ def add_book(**kwargs):
     new_book = Books()
 
     answer_from_model = new_book.add_book(
-        writer_id=kwargs["writer_id"],
-        date_published=kwargs["date_published"],
-        title=kwargs["title"],
-        state=kwargs["state"],
+        writer_id=args["writer_id"],
+        date_published=args["date_published"],
+        title=args["title"],
+        state=args["state"],
     )
     return answer_from_model.get("result") or answer_from_model.get("error")
 
 
 @validate
-def edit_book(**kwargs):
+def edit_book(args):
     """
     :param:
     {
@@ -191,10 +191,10 @@ def edit_book(**kwargs):
     :return:
     {"jsonrpc": "2.0", "result": 2, "id": 123}
     """
-    answer = kwargs["book_id"]
+    answer = args["book_id"]
     try:
-        edit_book_record = Books.objects.get(pk=kwargs["book_id"])
-        edit_book_record.edit_book(state=kwargs["state"])
+        edit_book_record = Books.objects.get(pk=args["book_id"])
+        edit_book_record.edit_book(state=args["state"])
     except Books.DoesNotExist:
         answer = {"error": JsonErr.DATA_NOT_FOUND_BOOK}
 
@@ -202,7 +202,7 @@ def edit_book(**kwargs):
 
 
 @validate
-def del_book(**kwargs):
+def del_book(args):
     """
     :param:
     {
@@ -215,7 +215,7 @@ def del_book(**kwargs):
     :return:
     {"jsonrpc": "2.0", "result": 1, "id": 3}
     """
-    answer = kwargs["book_id"]
+    answer = args["book_id"]
     try:
         deleted_book = Books.objects.get(pk=answer)
     except Books.DoesNotExist:

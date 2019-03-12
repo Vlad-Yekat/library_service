@@ -22,3 +22,6 @@ requests==2.21.0
 requests-unixsocket==0.1.5
 mock==2.0.0
 
+# client
+aiohttp==3.5.4
+asyncio==3.4.3

@@ -4,7 +4,7 @@ import json
 
 
 def main():
-    """ можно запускать из IDE или клонсоли"""
+    """ можно запускать из IDE или консоли"""
     url_library_service = "http://localhost:8000"
     # headers = {"content-type": "application/json"}
 
@@ -31,7 +31,7 @@ def main():
     test_add_book = {
         "method": "add_book",
         "params": {
-            "writer_id": str(writer_id),
+            "writer_id": writer_id,
             "date_published": "1759-01-01",
             "title": "The Theory of Moral Sentiments",
             "state": "PUBLISHED",
